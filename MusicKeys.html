@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Piano</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <body>
+    <h1>Oluchi's piano assessment</h1>
+
+    <style>
+      body {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .container {
+        display: flex;
+        position: relative;
+        width: 70%;
+        max-width: 800px;
+
+        /* justify-content: center; */
+      }
+      .flat_key {
+        width: 100px;
+        height: 250px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex: 1;
+      }
+
+      .Top_key {
+        /* width: 50px; */
+        width: 7%;
+        height: 150px;
+        /* border: 1px solid #ccc; */
+        cursor: pointer;
+        background-color: black;
+        z-index: 1;
+        position: absolute;
+        flex: 1;
+      }
+
+      .flat_key:hover {
+        background: linear-gradient(to top, #ccc 10%, #fff 50%);
+      }
+
+      #black1 {
+        left: 11%;
+      }
+      #black2 {
+        left: 25%;
+      }
+      #black3 {
+        left: 54%;
+      }
+      #black4 {
+        left: 68%;
+      }
+      #black5 {
+        left: 82%;
+      }
+    </style>
+
+    <div class="container">
+      <div class="flat_key" onclick="playNote('c_tone.mp3')">
+        <p>C</p>
+      </div>
+      <div class="Top_key" id="black1" onclick="playNote('c_sharp.mp3')"></div>
+      <div class="flat_key" onclick="playNote('d_tone.mp3')">
+        <p>D</p>
+      </div>
+      <div class="Top_key" id="black2" onclick="playNote('d_sharp.mp3')"></div>
+      <div class="flat_key" onclick="playNote('e_tone.mp3')">
+        <p>E</p>
+      </div>
+      <div class="flat_key" onclick="playNote('f_tone.mp3')">
+        <p>F</p>
+      </div>
+      <div class="Top_key" id="black3" onclick="playNote('f_sharp.mp3')"></div>
+      <div class="flat_key" onclick="playNote('g_tone.mp3')">
+        <p>G</p>
+      </div>
+      <div class="Top_key" id="black4" onclick="playNote('g_sharp.mp3')"></div>
+      <div class="flat_key" onclick="playNote('a_tone.mp3')">
+        <p>A</p>
+      </div>
+      <div class="Top_key" id="black5" onclick="playNote('a_sharp.mp3')"></div>
+      <div class="flat_key" onclick="playNote('b_tone.mp3')">
+        <p>B</p>
+      </div>
+    </div>
+  </body>
+
+  <script>
+            function playNote(noteSrc){
+        let audio = new Audio(noteSrc)
+        audio.play()
+    }
+  </script>
+</html>
